@@ -4,11 +4,10 @@
   "description": "A retro pixel operating system website - Boot to clouds. Work in pixels.",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
+    "dev": "next dev",
+    "build": "next build",
     "start": "next start",
-    "lint": "eslint",
-    "export": "next build && next export"
+    "lint": "eslint"
   },
   "keywords": ["retro", "pixel", "OS", "operating-system", "vintage", "8-bit", "nextjs"],
   "author": "Heaven OS Team",
