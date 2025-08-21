@@ -117,7 +117,7 @@ export default function Demo() {
                     onChange={(e) => setCommandInput(e.target.value)}
                     placeholder="Try typing something..."
                     className="command-input"
-                    autoFocus
+                    
                   />
                 </form>
 

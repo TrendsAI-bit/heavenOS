@@ -106,10 +106,10 @@ export default function Home() {
       {/* Sound Toggle */}
       <SoundToggle />
 
-      {/* Keyboard shortcut hint */}
-      <div className="fixed bottom-4 left-4 z-40">
-        <div className="bg-black text-halo-gold px-3 py-2 font-mono text-xs pixel-border">
-          Press Ctrl/⌘+K for command palette
+             {/* Keyboard shortcut hint */}
+       <div className="fixed bottom-4 left-4 z-40">
+         <div className="bg-black text-halo-gold px-3 py-2 font-mono text-xs pixel-border">
+           Press Ctrl/⌘+K for AI command palette
         </div>
       </div>
     </div>
