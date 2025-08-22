@@ -2,7 +2,11 @@
 
 import { useState } from 'react';
 
-export default function Demo() {
+interface DemoProps {
+  onOpenGame?: () => void;
+}
+
+export default function Demo({ onOpenGame }: DemoProps = {}) {
   const [isWindowOpen, setIsWindowOpen] = useState(true);
   const [isMinimized, setIsMinimized] = useState(false);
   const [commandInput, setCommandInput] = useState('');
@@ -64,7 +68,96 @@ export default function Demo() {
           </p>
         </div>
 
-        {/* Demo Window */}
+        {/* Interactive Apps Grid */}
+        <div className="max-w-6xl mx-auto mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Flappy Heaven Game */}
+            <div className="pixel-window bg-white p-4 hover:shadow-lg transition-shadow">
+              <div className="text-center mb-4">
+                <div className="text-4xl mb-2">🌤️</div>
+                <h3 className="font-pixel text-lg mb-2">Flappy Heaven</h3>
+                <p className="text-sm font-mono text-gray-600 mb-4">
+                  Navigate through the clouds in this pixel-perfect game
+                </p>
+                <button
+                  onClick={() => {
+                    if (onOpenGame) {
+                      onOpenGame();
+                    } else {
+                      alert('🌤️ Flappy Heaven game! Use the "Play Game" button in the bottom-right corner to start playing!');
+                    }
+                  }}
+                  className="pixel-button-primary w-full"
+                >
+                  Play Game
+                </button>
+              </div>
+            </div>
+
+            {/* Calculator Demo */}
+            <div className="pixel-window bg-white p-4 hover:shadow-lg transition-shadow">
+              <div className="text-center mb-4">
+                <div className="text-4xl mb-2">🧮</div>
+                <h3 className="font-pixel text-lg mb-2">Calculator</h3>
+                <p className="text-sm font-mono text-gray-600 mb-4">
+                  Try: calc 15*23 in the command palette below
+                </p>
+                <button
+                  onClick={() => {
+                    alert('🧮 Try typing "calc 15*23" in the command palette (Ctrl/⌘+K)');
+                  }}
+                  className="pixel-button-primary w-full"
+                >
+                  Try Calculator
+                </button>
+              </div>
+            </div>
+
+            {/* AI Assistant Demo */}
+            <div className="pixel-window bg-white p-4 hover:shadow-lg transition-shadow">
+              <div className="text-center mb-4">
+                <div className="text-4xl mb-2">🤖</div>
+                <h3 className="font-pixel text-lg mb-2">AI Assistant</h3>
+                <p className="text-sm font-mono text-gray-600 mb-4">
+                  Ask questions and get intelligent responses
+                </p>
+                <button
+                  onClick={() => {
+                    alert('🤖 Press Ctrl/⌘+K and ask me anything! Try "What is machine learning?" or "Tell me a joke"');
+                  }}
+                  className="pixel-button-primary w-full"
+                >
+                  Ask AI
+                </button>
+              </div>
+            </div>
+
+            {/* Terminal Demo */}
+            <div className="pixel-window bg-white p-4 hover:shadow-lg transition-shadow">
+              <div className="text-center mb-4">
+                <div className="text-4xl mb-2">💻</div>
+                <h3 className="font-pixel text-lg mb-2">Terminal</h3>
+                <p className="text-sm font-mono text-gray-600 mb-4">
+                  Classic terminal with built-in commands
+                </p>
+                <button
+                  onClick={() => {
+                    const terminal = document.querySelector('.command-input') as HTMLInputElement;
+                    if (terminal) {
+                      terminal.focus();
+                      terminal.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
+                  className="pixel-button-primary w-full"
+                >
+                  Use Terminal
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Demo Terminal Window */}
         <div className="max-w-2xl mx-auto">
           <div className="pixel-window bg-white">
             {/* Window Header */}

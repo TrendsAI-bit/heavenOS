@@ -9,9 +9,11 @@ import Footer from '@/components/Footer';
 import CommandPalette from '@/components/CommandPalette';
 import CRTToggle from '@/components/CRTToggle';
 import SoundToggle from '@/components/SoundToggle';
+import { useGameLauncher } from '@/components/GameLauncher';
 
 export default function Home() {
   const [isCommandPaletteOpen, setIsCommandPaletteOpen] = useState(false);
+  const { openGame, GameLauncher } = useGameLauncher();
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -60,7 +62,7 @@ export default function Home() {
         </section>
 
         <Features />
-        <Demo />
+        <Demo onOpenGame={openGame} />
 
         {/* Download Section */}
         <section id="download" className="py-20 px-4 sm:px-6 lg:px-8 bg-halo-gold">
@@ -106,11 +108,24 @@ export default function Home() {
       {/* Sound Toggle */}
       <SoundToggle />
 
-             {/* Keyboard shortcut hint */}
+             {/* Game Launcher */}
+       <GameLauncher />
+
+       {/* Keyboard shortcut hint */}
        <div className="fixed bottom-4 left-4 z-40">
          <div className="bg-black text-halo-gold px-3 py-2 font-mono text-xs pixel-border">
            Press Ctrl/⌘+K for AI command palette
         </div>
+      </div>
+
+      {/* Game shortcut hint */}
+      <div className="fixed bottom-4 right-4 z-40">
+        <button
+          onClick={openGame}
+          className="pixel-button text-xs px-3 py-2 bg-halo-gold hover:bg-yellow-400"
+        >
+          🌤️ Play Game
+        </button>
       </div>
     </div>
   );

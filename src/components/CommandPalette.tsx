@@ -14,7 +14,7 @@ export default function CommandPalette({ isOpen, onClose }: CommandPaletteProps)
   const [history, setHistory] = useState<Array<{ input: string; response: string }>>([]);
 
   const commands = {
-    'help': 'Available commands: help, about, features, download, clear, time, weather',
+    'help': 'Available commands: help, about, features, game, calc, joke, time, weather, clear',
     'about': 'Heaven OS - A retro pixel operating system for the modern age',
     'features': 'Heaven Prompt • Halo Bar • Cloud Desk • Quiet Mode',
     'download': 'Download coming soon! This is a web demo for now.',
@@ -38,7 +38,24 @@ export default function CommandPalette({ isOpen, onClose }: CommandPaletteProps)
     'history': () => {
       if (history.length === 0) return 'No command history yet. Start typing some commands!';
       return `Recent commands:\n${history.slice(-5).map((h, i) => `${i + 1}. ${h.input}`).join('\n')}`;
-    }
+    },
+    'game': () => {
+      // Create a simple ASCII art game preview
+      return `🌤️ FLAPPY HEAVEN - Pixel Game Available!\n\n` +
+             `    ☁️     ☁️     ☁️\n` +
+             `  🐦💨         |\n` +
+             `    ☁️     ☁️  |\n` +
+             `              |\n` +
+             `Navigate through the clouds!\n\n` +
+             `Game features:\n` +
+             `• Pixel-perfect graphics\n` +
+             `• Sound effects\n` +
+             `• High score tracking\n` +
+             `• Classic flappy mechanics\n\n` +
+             `Try typing "play game" for more info!`;
+    },
+    'play': 'Try "play game" to learn about Flappy Heaven!',
+    'flappy': 'Flappy Heaven is available! Try "game" command to see preview.'
   };
 
   const callOpenAI = async (prompt: string): Promise<string> => {
@@ -205,7 +222,7 @@ export default function CommandPalette({ isOpen, onClose }: CommandPaletteProps)
 
             {/* Quick Commands */}
             <div className="mt-4 flex flex-wrap gap-2">
-              {['help', 'time', 'joke', 'calc 2+2', 'weather'].map((cmd) => (
+              {['help', 'game', 'time', 'joke', 'calc 2+2'].map((cmd) => (
                 <button
                   key={cmd}
                   onClick={() => setInput(cmd)}
