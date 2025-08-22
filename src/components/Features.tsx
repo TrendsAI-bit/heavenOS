@@ -19,10 +19,10 @@ export default function Features() {
       details: "Pixel perfect • Snap to grid • Multi-window"
     },
     {
-      title: "Quiet Mode",
-      description: "Monochrome focus theme that eliminates distractions. Pure concentration, zero noise.",
-      icon: "◐",
-      details: "Distraction-free • Eye-friendly • Toggle anywhere"
+      title: "Pixel Games",
+      description: "Built-in retro games like Flappy Heaven. Perfect pixel art and authentic 8-bit gameplay.",
+      icon: "🎮",
+      details: "Flappy Heaven • Pixel perfect • High scores • Sound effects"
     }
   ];
 

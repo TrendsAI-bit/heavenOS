@@ -50,12 +50,12 @@ export default function Home() {
               <p>
                 Our mission is simple: create a computing environment that feels both nostalgic and 
                 futuristic, where every interaction is meaningful and every visual element serves a purpose. 
-                No bloat, no distractions, just pure digital craftsmanship.
+                Complete with built-in pixel games, AI assistance, and authentic 8-bit experiences.
               </p>
               <p>
-                Whether you&apos;re a developer who misses the simplicity of early operating systems, 
-                a designer who appreciates pixel-perfect aesthetics, or just someone who wants their 
-                computer to feel more human, Heaven OS is built for you.
+                Whether you&apos;re a gamer who loves retro aesthetics, a developer who misses the 
+                simplicity of early operating systems, or just someone who wants their computer to 
+                feel more human, Heaven OS is built for you. Boot up and play Flappy Heaven instantly!
               </p>
             </div>
           </div>
